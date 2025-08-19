@@ -1,0 +1,241 @@
+[7:53 pm, 18/08/2025] Ali corporate & business solutions: <!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Wallpapers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .wallpaper {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      text-align…
+[8:43 pm, 18/08/2025] Ali corporate & business solutions: https://animeandwallpaper0.blogspot.com
+[11:46 am, 19/08/2025] Ali corporate & business solutions: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WallpaperHub</title>
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0;}
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#121212; color:#fff;}
+    
+    header {
+      background:#1e1e1e;
+      padding:15px 30px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #333;
+    }
+    header h1 { font-size:28px; color:#ff6600;}
+    header input[type="text"] {
+      padding:8px 12px;
+      font-size:16px;
+      border-radius:6px;
+      border:none;
+      outline:none;
+      margin-top:5px;
+      width:200px;
+    }
+    header button { margin-left:10px; padding:6px 12px; border:none; border-radius:6px; background:#ff6600; color:#fff; cursor:pointer;}
+
+    .categories { display:flex; flex-wrap:wrap; gap:10px; padding:15px 30px;}
+    .categories button { padding:6px 12px; border-radius:6px; border:none; cursor:pointer; font-weight:bold; background:#333; color:#fff; transition:all 0.3s ease;}
+    .categories button:hover, .categories button.active { background:#ff6600; color:#fff; transform:scale(1.05);}
+
+    .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; padding:20px 30px;}
+    .wallpaper { position:relative; border-radius:12px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.5); cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;}
+    .wallpaper:hover { transform:scale(1.03); box-shadow:0 10px 25px rgba(0,0,0,0.7);}
+    .wallpaper img { width:100%; display:block; height:auto;}
+
+    .overlay {
+      position:absolute;
+      bottom:0;
+      width:100%;
+      padding:10px;
+      background:rgba(0,0,0,0.6);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      opacity:0;
+      transition:opacity 0.3s ease;
+    }
+    .wallpaper:hover .overlay { opacity:1; }
+
+    .tags { display:flex; gap:5px; flex-wrap:wrap; }
+    .tags span { background:#ff6600; padding:3px 6px; border-radius:4px; font-size:12px; }
+
+    .download-btn, .fav-btn {
+      background:#fff; color:#ff6600; border:none; border-radius:6px; padding:5px 8px; font-weight:bold; cursor:pointer; font-size:12px; margin-left:5px;
+      transition:all 0.3s;
+    }
+    .download-btn:hover, .fav-btn:hover { background:#ff6600; color:#fff; }
+
+    .resolutions { display:none; flex-direction:column; position:absolute; top:-90px; right:0; background:#1e1e1e; border-radius:6px; box-shadow:0 5px 15px rgba(0,0,0,0.5);}
+    .resolutions button { margin:3px; padding:5px 8px; font-size:12px; border:none; border-radius:4px; cursor:pointer; background:#ff6600; color:#fff; }
+    .download-btn:hover + .resolutions { display:flex; }
+
+    @media(max-width:600px) { header input[type="text"]{ width:100%; margin-top:10px;} .gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:15px;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>WallpaperHub</h1>
+  <div>
+    <input type="text" id="search" placeholder="Search wallpapers...">
+    <button id="loginBtn">Login</button>
+  </div>
+</header>
+
+<div class="categories">
+  <button class="active" data-category="all">All</button>
+  <button data-category="nature">Nature</button>
+  <button data-category="anime">Anime</button>
+  <button data-category="gaming">Gaming</button>
+  <button data-category="abstract">Abstract</button>
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+const gallery = document.getElementById('gallery');
+const searchInput = document.getElementById('search');
+const categoryButtons = document.querySelectorAll('.categories button');
+const loginBtn = document.getElementById('loginBtn');
+
+// Fake login system
+let user = localStorage.getItem('user') || null;
+updateLoginBtn();
+
+loginBtn.addEventListener('click', () => {
+  if(!user){
+    const username = prompt("Enter username:");
+    if(username){ user=username; localStorage.setItem('user',user); alert('Logged in as '+user);}
+  } else {
+    if(confirm("Logout?")){ user=null; localStorage.removeItem('user'); alert('Logged out'); }
+  }
+  updateLoginBtn();
+});
+function updateLoginBtn(){ loginBtn.textContent = user ? Logout (${user}) : 'Login'; }
+
+const categories = ['nature','anime','gaming','abstract'];
+const wallpapers = [];
+for(let i=1;i<=50;i++){
+  const cat = categories[Math.floor(Math.random()*categories.length)];
+  const tags = [cat, 'wallpaper', 'HD'];
+  wallpapers.push({
+    id:i,
+    url:https://picsum.photos/400/250?random=${i},
+    category:cat,
+    title:${cat} Wallpaper ${i},
+    tags:tags
+  });
+}
+
+let filteredCategory = 'all';
+let searchTerm = '';
+let loadCount = 0;
+const loadStep = 12;
+let favorites = JSON.parse(localStorage.getItem('favorites')||'[]');
+
+function loadWallpapers(){
+  const filtered = wallpapers.filter(w=>
+    (filteredCategory==='all'||w.category===filteredCategory) &&
+    w.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const toLoad = filtered.slice(loadCount, loadCount+loadStep);
+  toLoad.forEach(w=>{
+    const div=document.createElement('div');
+    div.className='wallpaper';
+    div.innerHTML=`
+      <img src="${w.url}" alt="${w.title}">
+      <div class="overlay">
+        <div class="tags">${w.tags.map(tag=><span>${tag}</span>).join('')}</div>
+        <div>
+          <button class="download-btn">Download</button>
+          <div class="resolutions">
+            <button onclick="downloadResolution('${w.url}',1920,1080)">1080p</button>
+            <button onclick="downloadResolution('${w.url}',2560,1440)">2K</button>
+            <button onclick="downloadResolution('${w.url}',3840,2160)">4K</button>
+          </div>
+          <button class="fav-btn" onclick="toggleFavorite(${w.id})">${favorites.includes(w.id)?'♥':'♡'}</button>
+        </div>
+      </div>
+    `;
+    gallery.appendChild(div);
+  });
+  loadCount += loadStep;
+}
+
+function downloadResolution(url,w,h){
+  const a=document.createElement('a');
+  a.href=https://picsum.photos/${w}/${h}?random=${Math.floor(Math.random()*1000)};
+  a.download='wallpaper.jpg';
+  a.click();
+}
+
+// Favorites
+function toggleFavorite(id){
+  if(!user){ alert("Please login to save favorites"); return; }
+  const index=favorites.indexOf(id);
+  if(index>-1){ favorites.splice(index,1); }
+  else{ favorites.push(id); }
+  localStorage.setItem('favorites',JSON.stringify(favorites));
+  gallery.innerHTML=''; loadCount=0; loadWallpapers();
+}
+
+// Infinite scroll
+window.addEventListener('scroll', ()=>{
+  if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 500){
+    loadWallpapers();
+  }
+});
+
+// Search
+searchInput.addEventListener('input', ()=>{
+  searchTerm=searchInput.value;
+  gallery.innerHTML=''; loadCount=0; loadWallpapers();
+});
+
+// Category filter
+categoryButtons.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    categoryButtons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    filteredCategory = btn.dataset.category;
+    gallery.innerHTML=''; loadCount=0; loadWallpapers();
+  });
+});
+
+// Initial load
+loadWallpapers();
+</script>
+
+</body>
+</html>
